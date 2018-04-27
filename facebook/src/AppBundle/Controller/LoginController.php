@@ -34,7 +34,7 @@ class LoginController extends DefaultController
 
           }
       }else {
-        $redir = $this->render('login.html.twig');
+      $redir = $this->render('login.html.twig');
       }
 
         return $redir;
@@ -47,6 +47,15 @@ class LoginController extends DefaultController
     public function logout(Request $request, AuthenticationUtils $authUtils)
     {
         return $this->login();
+    }
+
+    /**
+     * @Route("/Message", name="timeline")
+     */
+    public function message(Request $request)
+    {
+
+     return $this->render('pageMessage.html.twig');
     }
 
     /**

@@ -1643,14 +1643,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2175,29 +2167,7 @@
       <argument type="service" id="security.authentication.retry_entry_point"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
-      <call method="add">
-        <argument type="service" id="security.request_matcher.33jzefw"/>
-        <argument type="collection">
-          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-      <call method="add">
-        <argument type="service" id="security.request_matcher.it2k2lk"/>
-        <argument type="collection">
-          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-      <call method="add">
-        <argument type="service" id="security.request_matcher.2jd_drb"/>
-        <argument type="collection">
-          <argument>ROLE_USER</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
-    </service>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false"/>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
@@ -2676,15 +2646,6 @@
         <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
-    </service>
-    <service id="security.request_matcher.33jzefw" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/login</argument>
-    </service>
-    <service id="security.request_matcher.it2k2lk" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/register</argument>
-    </service>
-    <service id="security.request_matcher.2jd_drb" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>

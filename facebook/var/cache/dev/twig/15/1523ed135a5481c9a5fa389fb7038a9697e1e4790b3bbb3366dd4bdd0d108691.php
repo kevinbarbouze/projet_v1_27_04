@@ -107,6 +107,10 @@ class __TwigTemplate_6e9a46c6f7554853a4a4d31e80ef29cc1000da44a20ff61fec05c78a63b
 <input type=\"submit\" name=\"inscription\" class=\"btn contenu\" value=\"Créer un compte\">
 </form>
 
+<a href=\"";
+        // line 53
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("timeline");
+        echo "\">Test lien</a>
 </div>
 
 
@@ -142,7 +146,7 @@ class __TwigTemplate_6e9a46c6f7554853a4a4d31e80ef29cc1000da44a20ff61fec05c78a63b
 
     public function getDebugInfo()
     {
-        return array (  105 => 49,  91 => 38,  66 => 16,  59 => 12,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  112 => 53,  105 => 49,  91 => 38,  66 => 16,  59 => 12,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -207,6 +211,7 @@ class __TwigTemplate_6e9a46c6f7554853a4a4d31e80ef29cc1000da44a20ff61fec05c78a63b
 <input type=\"submit\" name=\"inscription\" class=\"btn contenu\" value=\"Créer un compte\">
 </form>
 
+<a href=\"{{path(\"timeline\")}}\">Test lien</a>
 </div>
 
 
