@@ -24,12 +24,16 @@
 
 <div class="grid-x grid-padding-x contenu">
 
+  <div class="large-5 medium-12 cell">
+    <h1>INFOS + Erreurs </h1>
+  </div>
 
-<div class="large-12 medium-12 cell">
+
+<div class="large-7 medium-12 cell ">
 
   <h1>Inscription</h1>
 
-  <form action="{{ path('register') }}" method="post">
+  <form action="{{ path('register') }}" method="post" class="inscription">
   <!--<input type="text" name="username" id="username" placeholder="pseudo (3 à 15 caractères)" required />-->
     <input type="text" name="prenom" id="prenom" placeholder="Prénom" required />
     <input type="text" name="nom" id="nom" placeholder="Nom" required />
