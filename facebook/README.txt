@@ -19,3 +19,4 @@ Variable d'environnement
 
 - Tester si la commande php est reconnus dans le cmd, si oui vous pouvez executer le script
 test nouvelle ligne;
+ok
