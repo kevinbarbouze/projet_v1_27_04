@@ -20,7 +20,7 @@ class LoginController extends DefaultController
 
       //Utilisateur deja authentifié
       if($this->getUser() != null){
-          $redir =  $this->redirectToRoute('timeline');
+          $redir =  $this->redirectToRoute('mon_profil');
 
           $roles = $this->getUser()->getRoles();
 
@@ -30,7 +30,7 @@ class LoginController extends DefaultController
               $redir =  $this->redirectToRoute('admin');
           }else{
             //TODO Route user
-              $redir =  $this->redirectToRoute('timeline');
+              $redir =  $this->redirectToRoute('mon_profil');
 
           }
       }else {
