@@ -1,0 +1,329 @@
+body {
+    /*background-color: #D4E4F7 !important;*/
+    /*background-color: #EDE7F6 !important;*/
+}
+
+div.menu {
+    /*background-color: #236AB9;*/
+    /*background-color: #673AB7;*/
+    background-color: #9575CD;
+}
+
+div.footer {
+    /*background-color: #341C09;*/
+    /*background-color: #311B92;*/
+    background-color: #512DA8;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.contenu {
+    /*background-color: #D4E4F7;*/
+    /*background-color: #EDE7F6;*/
+}
+
+div.renseignementProfil {
+   /* background-color: #B85B14;*/
+   background-color: #B39DDB;
+    text-align: center;
+}
+
+div.photoProfil{
+    /*background-color: #B85B14;*/
+    background-color: #B39DDB;
+    text-align: center;
+}
+
+div.mur{
+    /*background-color: #236AB9;*/
+    background-color: #512DA8;
+    text-align: center;
+    /*border: 1px solid #341C09;*/
+    border: 1px solid black;
+    height: 45px;
+}
+
+div.lienAccueil {
+    text-align: center;
+}
+
+@font-face {
+    font-family: titre;
+    src: url(Quicksand/Quicksand-Regular.ttf);
+}
+
+h1 {
+	text-align: center;
+    /*color: #341C09;*/
+    /*color: #6200EA;*/
+    color: #651FFF;
+    font-size: 2em;
+    font-family: titre;
+	line-height: 1em;
+}
+
+h2 {
+    text-align: center;
+	color: #341C09;
+    font-size: 1.3em;
+    font-family: titre;
+	line-height: 1em;
+}
+
+p {
+    /*color: black;*/
+    color: white;
+	font-size: 0.9em;
+}
+
+p.footer {
+	text-align: center;
+    font-size: 0.9em;
+    /*color: #236AB9;*/
+    color: #B39DDB;
+}
+
+
+
+@font-face {
+    font-family: contenu;
+    src: url(Mina/Mina-Regular.ttf);
+}
+
+a {
+    color: #341C09;
+    font-family: contenu;
+    font-size: 1.3em;
+    text-decoration: inherit;
+}
+
+a.contenu {
+    font-size: 2em;
+    display: block;
+    margin: 0 auto;
+}
+
+a.menu {
+    line-height: 330%;
+}
+
+img.menu {
+    margin-top: 1em;
+}
+
+a:hover {
+    /*color: #FC7307;*/
+    color: #B39DDB;
+}
+
+p {
+    font-family: contenu;
+}
+
+
+/*button*/
+.btn {
+    /*background-color: #FC7307;*/
+    /*background-color: #6200EA;*/
+    background-color: #651FFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: contenu;
+    /*border-color: #B85B14;*/
+    /*border-color: #311B92;*/
+    border-color: #512DA8;
+    /*color: black;*/
+    color: white;
+    border-radius:10px;
+}
+
+.btn:hover {
+    /*background-color: #B85B14;
+    border-color: #FC7307;*/
+    /*background-color: #311B92;
+    border-color: #6200EA;*/
+    background-color: #512DA8;
+    border-color: #651FFF;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+    padding: 10px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    /*border: 1px solid #B85B14;*/
+    /*border: 1px solid #311B92;*/
+    border: 1px solid #512DA8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: contenu;
+    width: 36%;
+}
+
+input[type=submit].contenu {
+    width: 74%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+
+input[type=text].menu {
+    padding: 10px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    /*border: 1px solid #B85B14;*/
+    /*border: 1px solid #311B92;*/
+    border: 1px solid #512DA8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: contenu;
+    width: 100%;
+}
+
+::placeholder {
+    /*color: #FC7307;*/
+    color: #B39DDB;
+    font-family: contenu;
+}
+
+img.profil {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid #341C09;
+}
+
+div#photo {
+    display: none;
+}
+
+div#Apropos {
+    display: none;
+}
+
+
+
+
+/***************************PAGE PHOTO*************************************/
+
+.gallery {
+
+
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+
+  .gallery > div {
+    position: relative;
+    float: left;
+    padding: 5px;
+  }
+
+  .gallery > div > img {
+    display: block;
+    width: 200px;
+    transition: .1s transform;
+    transform: translateZ(0); /* hack */
+  }
+
+  .gallery > div:hover {
+    z-index: 1;
+  }
+
+  .gallery > div:hover > img {
+    transform: scale(1.7,1.7);
+    transition: .3s transform;
+  }
+
+  .cf:before, .cf:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+
+
+
+
+  /********************************************PAGE A PROPOS *****************************************/
+
+  /* Style the tab */
+.tab {
+    float: left;
+
+    background-color: #B85B14;
+    width: 30%;
+    height: 300px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #FC7307;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #FC7307;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+    background-color: #FC7307;
+}
+
+
+
+
+/************************************CODE DE FLO ************************************/
+
+div.tchat {
+    text-align:left;
+	display: block;
+    background:#fff;
+    height:400px;
+    width:800px;
+    border:1px solid #ACD8F0;
+	border-radius: 10px;
+
+	}
+
+input.msg {
+	height:50px;
+    width:900px;
+}
+
+input.btnenv {
+	font-family: contenu;
+	background-color: #008CBA;
+	padding: 10px 24px;
+}
+
+/*********************************** FIN CODE DE FLO *****************************************/

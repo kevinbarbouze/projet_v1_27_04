@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Commentaire" table="commentaire">
+    <indexes>
+      <index name="FK_Commentaire_id_Utilisateur" columns="id_Utilisateur"/>
+      <index name="FK_Commentaire_id_Post" columns="id_Post"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="texte" type="string" column="texte" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dateCommentaire" type="date" column="date_commentaire" nullable="false"/>
+    <field name="heureCommentaire" type="string" column="heure_commentaire" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idPost" target-entity="Post" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Post" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idUtilisateur" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Utilisateur" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

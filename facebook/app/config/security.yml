@@ -1,0 +1,33 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+  role_hierarchy:
+    ROLE_ADMIN: ROLE_USER
+  encoders:
+    AppBundle\Entity\Utilisateur:
+      algorithm: plaintext
+# https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+  providers:
+    my_provider:
+      entity:
+        class: AppBundle:Utilisateur
+        property: email
+  firewalls:
+# disables authentication for assets and the profiler, adapt it according to your needs
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      logout:
+        path: /logout
+        target: /login
+      anonymous: ~
+      provider: my_provider
+      form_login:
+        login_path: login
+        check_path: login
+  access_control:
+# require ROLE_ADMIN for /admin*
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/, roles: ROLE_USER }

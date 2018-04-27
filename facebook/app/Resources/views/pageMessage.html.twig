@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+{% block html %}
+{% block head %}
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="foundation\css\foundation.css">
+
+		<title>*nom reseau social*</title>
+
+{% endblock head %}
+
+{% block body %}
+
+
+<div class="grid-container.fluid">
+
+
+
+	<div class="grid-x grid-padding-x menu">
+
+		<div class="large-3 medium-3 cell">
+			<h1>*Logo*</h1>
+		</div>
+
+		<div class="large-2 medium-2 cell">
+			<input type="text" class="menu" placeholder="Chercher..." />
+		</div>
+
+		<div class="large-2 medium-2 cell">
+			<a href="pageTimeLine.php" class="menu">Accueil</a>
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="css/img/invitations.png" alt="Invitations" />
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="css/img/messages.png" alt="Messages" />
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="css/img/parametres.png" alt="Paramètres" />
+		</div>
+
+		<div class="large-2 medium-2 cell">
+			<a href="deconnexion.php" class="menu">Déconnexion</a>
+		</div>
+
+	</div>
+
+	<div class="grid-x grid-padding-x contenu">
+
+		<div class="large-12 medium-12 cell">
+			<h1> Messagerie privée </h1>
+		</div>
+	</div>
+
+	<hr/>
+
+			<div class="grid-x grid-padding-x contenu">
+
+			<div id="msg" class="large-3 medium-3 cell msg">
+			<h1> Messages </h1>
+			</div>
+			<div id="msg" class="large-8 medium-8 cell msg">
+			<h1> Conversation </h1>
+			</div>
+			</div>
+
+		<div class="grid-x grid-padding-x contenu">
+
+		<div id="tchat" class="large-3 medium-3 cell">
+		<h1> *Liste conversations récentes* </h1>
+		</div>
+
+		<div id="tchat" class="large-8 medium-8 cell tchat">
+		</div>
+		</div>
+
+		<div class="grid-x grid-padding-x contenu">
+
+		<div id="tchat" class="large-3 medium-3 cell">
+		</div>
+
+		<div id="tchat" class="large-8 medium-8 cell ">
+		<form name="message" action="">
+        <input class="msg" name="usermsg" type="text" id="usermsg"  placeholder="Saisissez votre message..." />
+        <input class="btnenv" name="envoyer" type="submit"  id="envoyer" value="Envoyer"/>
+		</form>
+		</div>
+		</div>
+
+
+
+
+
+		<div class="grid-x grid-padding-x footer">
+			<div class="large-12 medium-12 cell">
+				<p class="footer">&copy; Aix-Marseille Université</p>
+			</div>
+		</div>
+
+
+</div>
+{% endblock body %}
+
+{% endblock html %}

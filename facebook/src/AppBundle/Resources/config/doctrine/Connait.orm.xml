@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Connait" table="connait">
+    <indexes>
+      <index name="FK_Connait_id2" columns="id_Utilisateur2"/>
+      <index name="IDX_8929B949EA59BF68" columns="id_Utilisateur1"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id_Utilisateur1" columns="id_Utilisateur1,id_Utilisateur2"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="etatRequete" type="boolean" column="etat_requete" nullable="true"/>
+    <many-to-one field="idUtilisateur1" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Utilisateur1" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idUtilisateur2" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Utilisateur2" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
