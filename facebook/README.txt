@@ -21,3 +21,5 @@ Variable d'environnement
 test nouvelle ligne;
 ok
 ok1
+
+ok2
