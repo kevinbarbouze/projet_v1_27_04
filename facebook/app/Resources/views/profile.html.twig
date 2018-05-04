@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="grid-container.fluid">
+
+
+
+	<div class="grid-x grid-padding-x menu">
+
+		<div class="large-3 medium-3 cell">
+			<h1>*Logo*</h1>
+		</div>
+
+		<div class="large-2 medium-2 cell">
+			<input type="text" class="menu" placeholder="Chercher..." />
+		</div>
+
+		<div class="large-2 medium-2 cell lienAccueil">
+			<a href="{{path('homepage')}}" class="menu">Accueil</a>
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="{{ asset('css/img/invitations.png')}}" class="menu" alt="Invitations" />
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="{{ asset('css/img/messages.png')}}" class="menu" alt="Messages" />
+		</div>
+
+		<div class="large-1 medium-1 cell">
+			<img src="{{ asset('css/img/parametres.png')}}" class="menu" alt="Paramètres" />
+		</div>
+
+		<div class="large-2 medium-2 cell">
+			<a href="{{path('logout')}}" class="menu">Déconnexion</a>
+		</div>
+
+	</div>
+
+	<div class="grid-x grid-padding-x contenu">
+
+		<div class="large-12 medium-12 cell">
+			<img src="{{ asset('css/img/photoProfil.png')}}" class="profil" alt="Photo de profil" />
+		</div>
+
+	</div>
+
+	<div class="grid-x grid-padding-x contenu">
+
+		<div class="large-4 medium-4 cell renseignementProfil" onclick="afficheApropos()">
+			<h1>À propos</h1>
+		</div>
+
+		<div class="large-4 medium-4 cell nomProfil">
+			<h1>{{prenom}} {{nom}}</h1>
+		</div>
+
+		<div class="large-4 medium-4 cell photoProfil" onclick="affichePhoto()">
+			<h1>Photo</h1>
+		</div>
+
+	</div>
+
+	<hr/>
+
+	<div class="grid-x grid-padding-x contenu">
+
+		<div class="large-6 medium-6 cell mur">
+			<p>Créer une publication</p>
+		</div>
+
+		<div class="large-6 medium-6 cell mur">
+			<p>Photo/vidéo</p>
+		</div>
+
+	</div>
+
+	<hr/>
+
+	<div class="grid-x grid-padding-x contenu" id="photo">
+		<div class="gallery cf">
+
+
+
+<!-- GALERE-->
+
+
+
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+  <div>
+  <img src="css/img/photoProfil.png" class="profil" alt="Photo de profil" />
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="grid-x grid-padding-x contenu" id="Apropos">
+
+		<div class="tab">
+  			<button class="tablinks" onclick="openCity(event, 'London')"><h2>Informations générales et coordonnées</h2></button>
+  			<button class="tablinks" onclick="openCity(event, 'Paris')"><h2>Emploi et scolarité</h2></button>
+  			<button class="tablinks" onclick="openCity(event, 'Tokyo')"><h2>Évènements marquants</h2></button>
+		</div>
+
+		<div id="London" class="tabcontent">
+  			<h2>Coordonnées</h2>
+			  <p>tel</p>
+			  <p>email</p>
+		</div>
+
+		<div id="Paris" class="tabcontent">
+  			<h2>Emploi</h2>
+			  <p>chômage</p>
+			 <h2>Scolarité</h2>
+			 <p>{{bio}}</p>
+		</div>
+
+		<div id="Tokyo" class="tabcontent">
+  			<h2>Évènements</h2>
+  			<p>ecrire</p>
+		</div>
+
+	</div>
+
+
+
+
+		<div class="grid-x grid-padding-x footer">
+			<div class="large-12 medium-12 cell">
+				<p class="footer">&copy; Aix-Marseille Université</p>
+			</div>
+		</div>
+
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{asset('js/fonctionsPages.js')}}"></script>
+{% endblock %}
