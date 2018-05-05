@@ -34,7 +34,7 @@ class LoginController extends DefaultController
 
           }
       }else {
-        $redir = $this->render('login.html.twig');
+        $redir = $this->render('login.html.twig',array('erreur' => ""));
       }
 
         return $redir;
@@ -64,11 +64,9 @@ class LoginController extends DefaultController
            $params['email']  = $request->request->get('email');
            $params['password']  = $request->request->get('password');
            $pass2 = $request->request->get('password2');
-
-           if(! preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $params['email'])) {
-               echo "Entrer mail valide";
-           }else if ($params['password'] != $pass2) {
-               echo "Entrer pass valide";
+           $erreur;
+           if ($params['password'] != $pass2) {
+               $erreur = "Les mots de passe ne correspondent pas.";
            }else{
               //// TODO: Requete méthode
               $em = $this->getDoctrine()->getManager();
@@ -89,8 +87,11 @@ class LoginController extends DefaultController
 
 
            }
-            return $this->redirectToRoute('login');
+            return $this->render('login.html.twig',array('erreur' => $erreur));
+       }else{
+          return  $this->redirectToRoute('login');
        }
+
    }
 
 
