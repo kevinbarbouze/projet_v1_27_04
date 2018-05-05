@@ -68,6 +68,7 @@ class LoginController extends DefaultController
            if ($params['password'] != $pass2) {
                $erreur = "Les mots de passe ne correspondent pas.";
            }else{
+             $erreur ="";
               //// TODO: Requete méthode
               $em = $this->getDoctrine()->getManager();
 
