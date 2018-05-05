@@ -16,6 +16,7 @@
   <input type="hidden" name="_target_path" value="{{  absolute_url(path("login")) }}" />
   <input type="submit" name="connexion" class="btn" value="Connexion"/>
 </form>
+
 </div>
 
 
@@ -49,7 +50,7 @@
 <input type="hidden" name="_target_path" value="{{ path("register") }}" />
 <input type="submit" name="inscription" class="btn contenu" value="Créer un compte">
 </form>
-
+<h2 class="text-left subheader">{{erreur}}</h2>
 </div>
 
 
