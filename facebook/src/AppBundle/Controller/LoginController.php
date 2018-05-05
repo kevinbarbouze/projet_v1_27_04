@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use AppBundle\Entity\Utilisateur;
 use AppBundle\Entity\Role;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 
 class LoginController extends DefaultController
@@ -81,12 +82,12 @@ class LoginController extends DefaultController
               $role = $em->getRepository('AppBundle:Role')->find(1); //User
               $user->setIdRole($role); //Role User
 
-              $em->persist($user);
-
-              $em->flush();
-
-
-
+              try {
+                  $em->persist($user);
+                  $em->flush();
+                }catch (UniqueConstraintViolationException $e) {
+                  $erreur = "Cette adresse email est deja utilisée.";
+                }
            }
             return $this->render('login.html.twig',array('erreur' => $erreur));
        }else{
